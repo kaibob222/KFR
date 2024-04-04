@@ -8,14 +8,14 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Authorization = () => {
+const Authorization = ({navigation}) => {
 
 return (
     <View style={styles.main}>
       <TouchableOpacity style={styles.button}>
         <Text style={styles.text}>Sign up</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={()=>navigation.replace('Tab')} >
         <Text style={styles.text}>Sign in</Text>
       </TouchableOpacity>
     </View>
