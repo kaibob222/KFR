@@ -1,5 +1,6 @@
 import React from 'react';
 import Authorization from './authorization';
+import TabNavigator from './TabNavigator';
 import {createStackNavigator} from '@react-navigation/stack';
 
 
@@ -13,6 +14,11 @@ const Main = () => {
         component={Authorization}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="Tab"
+        component={TabNavigator}
+        options={{headerShown: false}}
+      />      
     </Stack.Navigator>
   );
 };
