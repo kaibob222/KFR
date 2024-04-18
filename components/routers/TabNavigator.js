@@ -1,8 +1,7 @@
 import React, {useEffect} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image, StyleSheet} from 'react-native';
-import TaskManager from '../screens/tasks';
-import Notes from '../screens/Notes';
+import TaskManager from './screens/Tasks/task';
 
 const Tab = createBottomTabNavigator();
 
