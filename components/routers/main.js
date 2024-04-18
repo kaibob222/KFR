@@ -18,7 +18,7 @@ const Main = () => {
         name="Tab"
         component={TabNavigator}
         options={{headerShown: false}}
-      />      
+      />    
     </Stack.Navigator>
   );
 };
