@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontFamily: 'Inconsolata',
     fontWeight:'bold',
     fontSize: 15,
   },
