@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Image, StyleSheet} from 'react-native';
 import TaskManager from '../screens/tasks';
-import Notes from '../screens/Notes';
+import Notes from '../screens/notes';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,7 +18,17 @@ const TabNavigator = () => {
           ),
         }}
       />
-    </Tab.Navigator>
+      <Tab.Screen
+        name="Notes"
+        component={Notes}
+        options={{
+          tabBarIcon: ({focused}) => (
+            null
+          ),
+        }}
+      />
+      
+      </Tab.Navigator>
   );
 };
 
