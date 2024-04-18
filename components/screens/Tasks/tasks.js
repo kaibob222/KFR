@@ -3,7 +3,7 @@ import { View, Text, TextInput, Button, FlatList, TouchableOpacity } from 'react
 import TaskList from "./TaskList";  
 import TaskModal from "./TaskModal";  
 
-import styles from "../styles";
+import styles from "./styles";
   
 
 const TaskManager = () => {

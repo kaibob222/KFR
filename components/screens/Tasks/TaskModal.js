@@ -6,7 +6,7 @@ import {
 	Button, 
 	Modal, 
 } from "react-native"; 
-import styles from "../styles"; 
+import styles from "./styles"; 
 import DatePicker from "react-native-modern-datepicker"; 
 
 const TaskModal = ({ 
