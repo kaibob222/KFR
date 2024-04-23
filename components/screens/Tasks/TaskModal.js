@@ -1,13 +1,14 @@
-import React from "react"; 
-import { 
-	View, 
-	Text, 
-	TextInput, 
-	Button, 
-	Modal, 
-} from "react-native"; 
-import styles from "./styles"; 
-import DatePicker from "react-native-modern-datepicker"; 
+import React from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  Modal,
+  SafeAreaView,
+} from "react-native";
+import styles from "./styles";
+import DatePicker from "react-native-modern-datepicker";
 
 const TaskModal = ({ 
 	modalVisible, 
