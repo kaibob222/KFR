@@ -24,7 +24,6 @@ const Notes = () => {
 
 const styles = StyleSheet.create({
   container: {
-//    fontFamily: 'Inconsolata',
     flex: 1,
     backgroundColor: '#EFEFEF',
     paddingHorizontal: 20, 
