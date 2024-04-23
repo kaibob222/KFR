@@ -32,10 +32,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      # - name: Set up SSH
-      #   uses: webfactory/ssh-agent@v0.8.0
-      #   with:
-      #     ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-      #     persist-credentials: false
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.FEDOROV_PRIVATE_KEY }}
+          persist-credentials: false
       - name: Execute build script on VPS
-        run: ssh -i fedorov fedorov@mivt22.kit-imi.info "cd KFR && git pull"
+        run: ssh fedorov@mivt22.kit-imi.info "cd KFR && git pull"
