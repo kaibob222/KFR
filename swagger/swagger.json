@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Firebase Authentication API",
+      "version": "1.0.0"
+    },
+    "basePath": "/api/auth",
+    "schemes": [
+      "https"
+    ],
+    "paths": {
+      "/signin": {
+        "post": {
+          "summary": "Sign in with email and password",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User signed in successfully"
+            },
+            "400": {
+              "description": "Invalid email or password"
+            }
+          }
+        }
+      },
+      "/signup": {
+        "post": {
+          "summary": "Sign up with email and password",
+          "parameters": [
+            {
+              "name": "email",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "name": "password",
+              "in": "formData",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "User signed up successfully"
+            },
+            "400": {
+              "description": "Email already in use or invalid password"
+            }
+          }
+        }
+      }
+    }
+  }
+  
