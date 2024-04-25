@@ -38,4 +38,4 @@ jobs:
           ssh-private-key: ${{ secrets.FEDOROV_PRIVATE_KEY }}
           persist-credentials: false
       - name: Execute build script on VPS
-        run: ssh fedorov@mivt22.kit-imi.info "sh script.sh"
+        run: ssh fedorov@mivt22.kit-imi.info "cd KFR && sh script.sh"
