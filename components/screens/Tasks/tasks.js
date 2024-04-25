@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, FlatList, TouchableOpacity } from 'react-native';
 import TaskList from "./TaskList";  
-import TaskModal from "./TaskModal";  
-
+import TaskModal from "./TaskModal"; 
 import styles from "./styles";
-  
 
 const TaskManager = () => {
       
@@ -19,22 +17,15 @@ const TaskManager = () => {
 
     const [modalVisible, setModalVisible] = useState(false);  
       
-
     const [editingTask, setEditingTask] = useState(null);  
-    const [validationError, setValidationError] = 
-        useState(false);
+    const [validationError, setValidationError] = useState(false);
   
     const handleAddTask = () => { 
-        if ( 
-            task.title.trim() !== "" && 
-            task.deadline !== ""
-        ) { 
+        if (task.title.trim() !== "" && task.deadline !== "") { 
             const currentDate = new Date(); 
-            const formattedDate = 
-                currentDate.toLocaleString(); 
+            const formattedDate = currentDate.toLocaleString(); 
   
             if (editingTask) { 
-              
                 const updatedTasks = tasks.map((t) => 
                     t.id === editingTask.id 
                         ? { ...t, ...task } 
@@ -43,12 +34,9 @@ const TaskManager = () => {
                 setTasks(updatedTasks); 
                 setEditingTask(null); 
             } else { 
-              
                 const newTask = { 
                     id: Date.now(), 
                     ...task, 
-                      
-
                     createdAt: formattedDate,  
                 }; 
                 setTasks([...tasks, newTask]); 
@@ -66,22 +54,18 @@ const TaskManager = () => {
               
             setValidationError(false);  
         } else { 
-          
             setValidationError(true);  
         } 
     }; 
 
     const handleEditTask = (task) => { 
-      
         setEditingTask(task);  
         setTask(task);  
         setModalVisible(true);  
     }; 
   
     const handleDeleteTask = (taskId) => { 
-        const updatedTasks = tasks.filter( 
-            (t) => t.id !== taskId 
-        ); 
+        const updatedTasks = tasks.filter((t) => t.id !== taskId); 
         setTasks(updatedTasks); 
     }; 
   
@@ -90,10 +74,7 @@ const TaskManager = () => {
             t.id === taskId 
                 ? { 
                       ...t, 
-                      status: 
-                          t.status === "Pending"
-                              ? "Completed"
-                              : "Pending", 
+                      status: t.status === "Pending" ? "Completed" : "Pending", 
                   } 
                 : t 
         ); 
@@ -102,33 +83,32 @@ const TaskManager = () => {
   
     return ( 
         <View style={styles.container}> 
-            <Text style={styles.title}>Task Manager</Text>  
             <TaskList 
                 tasks={tasks} 
                 handleEditTask={handleEditTask} 
-                handleToggleCompletion={ 
-                    handleToggleCompletion 
-                } 
+                handleToggleCompletion={handleToggleCompletion} 
                 handleDeleteTask={handleDeleteTask} 
             /> 
-            <TouchableOpacity 
-                style={styles.addButton} 
-                onPress={() => { 
-                    setEditingTask(null); 
-                    setTask({ 
-                        title: "", 
-                        description: "", 
-                        status: "Pending", 
-                        deadline: "", 
-                        createdAt: "", 
-                    }); 
-                    setModalVisible(true); 
-                    setValidationError(false); 
-                }}> 
-                <Text style={styles.addButtonText}> 
-                    {editingTask ? "Edit Task" : "Add Task"} 
-                </Text> 
-            </TouchableOpacity> 
+             <TouchableOpacity 
+         style={styles.addButton}
+         onPress={() => { 
+             setEditingTask(null); 
+             setTask({ 
+                 title: "", 
+                 description: "", 
+                 status: "Pending", 
+                 deadline: "", 
+                 createdAt: "", 
+             }); 
+             setModalVisible(true); 
+             setValidationError(false); 
+         }}
+     > 
+         <Text style={[styles.addButtonText, {fontSize: 20}]}> 
+             {editingTask ? "Edit Task" : "Add Task"} 
+         </Text> 
+     </TouchableOpacity>
+
             <TaskModal 
                 modalVisible={modalVisible} 
                 task={task} 
@@ -150,4 +130,5 @@ const TaskManager = () => {
         </View> 
     ); 
 }; 
+
 export default TaskManager;
